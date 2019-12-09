@@ -19,8 +19,11 @@
   "author": "RenoFi",
   "license": "MIT",
   "scripts": {
-    "build": "rollup -c",
+    "clean": "node scripts/cleanBuild.js",
+    "build": "yarn clean && yarn compile && yarn static",
+    "compile": "rollup -c",
     "watch": "rollup -cw",
+    "static": "node scripts/copyStyles.js",
     "lint": "tsc --noEmit && tslint 'src/**/*.{js,ts,tsx}'"
   },
   "devDependencies": {
