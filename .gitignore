@@ -1,0 +1,8 @@
+.cache/
+build/
+dist/
+sbout/
+node_modules/
+*.log
+.DS_Store
+.env.*

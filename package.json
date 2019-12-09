@@ -1,0 +1,34 @@
+{
+  "name": "rc-simple-tooltip",
+  "version": "1.0.0",
+  "description": "Simple react tooltip component",
+  "sideEffects": false,
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "author": "RenoFi",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "lint": "tsc --noEmit && tslint 'src/**/*.{js,ts,tsx}'"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.15",
+    "@types/react-dom": "^16.9.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rollup": "^1.27.9",
+    "rollup-plugin-copy": "^3.1.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.3"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  }
+}
