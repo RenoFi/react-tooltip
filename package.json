@@ -2,6 +2,13 @@
   "name": "rc-simple-tooltip",
   "version": "1.0.0",
   "description": "Simple react tooltip component",
+  "keywords": [
+    "react",
+    "react-component",
+    "tooltip",
+    "react-tooltip",
+    "rc-simple-tooltip"
+  ],
   "sideEffects": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
