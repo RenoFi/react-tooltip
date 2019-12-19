@@ -28,7 +28,8 @@
     "compile": "rollup -c",
     "watch": "rollup -cw",
     "static": "node scripts/copyStyles.js",
-    "lint": "tsc --noEmit && tslint 'src/**/*.{js,ts,tsx}'"
+    "lint": "tsc --noEmit && tslint 'src/**/*.{js,ts,tsx}'",
+    "test": "yarn run lint"
   },
   "devDependencies": {
     "@types/react": "^16.9.15",
