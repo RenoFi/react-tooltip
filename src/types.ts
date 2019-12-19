@@ -6,3 +6,4 @@ export interface PosProps {
   top: boolean;
   bottom: boolean;
 }
+export type Rect = (ClientRect | DOMRect) & {x: number, y: number};

@@ -9,9 +9,18 @@ import React, {
 } from 'react';
 import {createPortal} from 'react-dom';
 import Content from './Content';
-import {Position, PosProps, Trigger} from './types';
+import {Position, PosProps, Rect, Trigger} from './types';
 
-const empty = {left: 0, top: 0, right: 0, bottom: 0, width: 0, height: 0};
+const empty: Rect = {
+  bottom: 0,
+  height: 0,
+  left: 0,
+  right: 0,
+  top: 0,
+  width: 0,
+  x: 0,
+  y: 0,
+};
 
 interface TooltipProps extends PosProps {
   active: boolean;
@@ -107,6 +116,11 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
         active={active}
         sticky={sticky}
         visible={visible}
+        onClickOutside={() => {
+          if (trigger === 'click' && active) {
+            setVisible(false);
+          }
+        }}
         {...props}>
         {visible && content}
       </Content>
