@@ -49,7 +49,7 @@ import 'rc-simple-tooltip/dist/styles.css';
 |:--:|:--:|:-----:|:----------|
 |**`active`**|`{Boolean}`|`null`|Show tooltip|
 |**`content`**|`{Node}`|`null`|Tooltip content|
-|**`position`**|`{'left'|'right'|'top'|'bottom'}`|`null`|Tooltip position|
-|**`trigger`**|`{'click'|'focus'|'hover'}`|`null`|Tooltip activation trigger|
+|**`position`**|`{'left'\|'right'\|'top'\|'bottom'}`|`null`|Tooltip position|
+|**`trigger`**|`{'click'\|'focus'\|'hover'}`|`null`|Tooltip activation trigger|
 |**`className`**|`{String}`|`null`|className value|
 |**`styles`**|`{Object}`|`null`|styles value|
