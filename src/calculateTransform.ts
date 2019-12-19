@@ -1,21 +1,24 @@
-export default (child: ClientRect | DOMRect, parent: ClientRect | DOMRect, position: string) => {
+import {Rect} from './types';
+
+export default (child: Rect, parent: Rect, position: string) => {
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
   switch (position) {
     case 'bottom':
-      return `translate3d(${child.left +
+      return `translate3d(${child.x +
         child.width / 2 -
-        parent.width / 2}px, ${child.top + child.height + 4}px, 0px)`;
+        parent.width / 2}px, ${child.y + child.height + 4 + scrollTop}px, 0px)`;
     case 'left':
-      return `translate3d(${child.left - parent.width - 4}px, ${child.top +
+      return `translate3d(${child.x - parent.width - 4}px, ${child.y +
         child.height / 2 -
-        17}px, 0px)`;
+        17 + scrollTop}px, 0px)`;
     case 'right':
-      return `translate3d(${child.left + child.width + 4}px, ${child.top +
+      return `translate3d(${child.x + child.width + 4}px, ${child.y +
         child.height / 2 -
-        17}px, 0px)`;
+        17 + scrollTop}px, 0px)`;
     case 'top':
-      return `translate3d(${child.left +
+      return `translate3d(${child.x +
         child.width / 2 -
-        parent.width / 2}px, ${child.top - parent.height - 4}px, 0px)`;
+        parent.width / 2}px, ${child.y - parent.height - 4 + scrollTop}px, 0px)`;
     default:
       return undefined;
   }
