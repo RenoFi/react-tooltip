@@ -32,15 +32,15 @@
     "test": "yarn run lint"
   },
   "devDependencies": {
-    "@types/react": "^16.9.15",
+    "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "rollup": "^1.27.9",
+    "rollup": "^1.27.14",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-typescript2": "^0.25.3",
     "tslint": "^5.20.1",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.4"
   },
   "peerDependencies": {
     "react": "^16.8.0",
