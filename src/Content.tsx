@@ -1,24 +1,17 @@
 import * as React from 'react';
 import calculateTransform from './calculateTransform';
+import getPosition from './getPosition';
 import {Position, PosProps, Rect} from './types';
-import {omit, pick} from './utils';
-
-const getPosition = (
-  position: Position,
-  {left, right, top, bottom}: PosProps) => {
-  if (left) { return 'left'; }
-  if (right) { return 'right'; }
-  if (top) { return 'top'; }
-  if (bottom) { return 'bottom'; }
-  return position;
-};
+import {getScrollTop} from './utils/dom';
+import omit from './utils/omit';
+import pick from './utils/pick';
 
 const positionKeys: Array<keyof PosProps> = ['left', 'right', 'top', 'bottom'];
 
 interface ContentProps extends PosProps {
   children: React.ReactNode;
-  className: string;
-  style: React.CSSProperties;
+  className?: string;
+  style?: React.CSSProperties;
   active: boolean;
   sticky: boolean;
   visible: boolean;
@@ -32,7 +25,7 @@ interface ContentProps extends PosProps {
 export type Ref = HTMLElement;
 
 class Content extends React.Component<ContentProps, {}> {
-  public componentWillMount() {
+  public componentDidMount() {
     document.addEventListener('mousedown', this.handleClickOutside, false);
   }
   public componentWillUnmount() {
@@ -56,7 +49,7 @@ class Content extends React.Component<ContentProps, {}> {
     const finalPosition = getPosition(position, pick(props, ...positionKeys));
     const transform =
       active && sticky
-        ? calculateTransform(childBox, parentBox, finalPosition)
+        ? calculateTransform(childBox, parentBox, finalPosition, getScrollTop())
         : undefined;
     const customStyle: React.CSSProperties = {
       display: 'inline-block',

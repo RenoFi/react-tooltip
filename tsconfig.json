@@ -10,7 +10,8 @@
     "jsx": "react",
     "pretty": true,
     "removeComments": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "include": [
     "src/**/*"

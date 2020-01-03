@@ -29,17 +29,25 @@
     "watch": "rollup -cw",
     "static": "node scripts/copyStyles.js",
     "lint": "tsc --noEmit && tslint 'src/**/*.{js,ts,tsx}'",
-    "test": "yarn run lint"
+    "test": "yarn lint && yarn jest",
+    "jest": "jest",
+    "coverage": "jest --coverage"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@types/jest": "^24.0.25",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
+    "jest": "^24.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "rollup": "^1.27.14",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-typescript2": "^0.25.3",
+    "ts-jest": "^24.2.0",
     "tslint": "^5.20.1",
+    "tslint-jest": "^1.0.5",
     "typescript": "^3.7.4"
   },
   "peerDependencies": {
