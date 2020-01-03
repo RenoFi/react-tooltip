@@ -59,3 +59,18 @@ import 'rc-simple-tooltip/dist/styles.css';
 |**`trigger`**|`{'click'\|'focus'\|'hover'}`|`null`|Tooltip activation trigger|
 |**`className`**|`{String}`|`null`|className value|
 |**`styles`**|`{Object}`|`null`|styles value|
+
+
+## Running locally
+
+With yarn:
+
+```
+yarn storybook
+```
+
+With npm:
+
+```
+npm run storybook
+```
