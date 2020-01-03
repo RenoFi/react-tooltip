@@ -6,6 +6,11 @@ Simple react tooltip componen
 [![Build Status](https://travis-ci.org/RenoFi/react-tooltip.svg?branch=master)](https://travis-ci.org/RenoFi/react-tooltip)
 
 
+## Demo
+
+![Demo](./media/demo.png?raw=true)
+
+
 ## Installation
 
 Install package with npm:
@@ -42,6 +47,7 @@ Additionally import `styles.css` to apply default styling:
 ```js
 import 'rc-simple-tooltip/dist/styles.css';
 ```
+
 
 ## Props
 
