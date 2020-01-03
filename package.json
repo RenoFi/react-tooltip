@@ -6,12 +6,17 @@
     "type": "git",
     "url": "https://github.com/RenoFi/react-tooltip.git"
   },
+  "bugs": {
+    "url": "https://github.com/RenoFi/react-tooltip/issues"
+  },
   "keywords": [
+    "component",
+    "rc-simple-tooltip",
     "react",
     "react-component",
-    "tooltip",
     "react-tooltip",
-    "rc-simple-tooltip"
+    "reactjs",
+    "tooltip"
   ],
   "sideEffects": false,
   "main": "dist/index.js",
