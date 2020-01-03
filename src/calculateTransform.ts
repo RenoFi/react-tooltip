@@ -1,7 +1,6 @@
 import {Rect} from './types';
 
-export default (child: Rect, parent: Rect, position: string) => {
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+export default (child: Rect, parent: Rect, position: string, scrollTop: number = 0) => {
   switch (position) {
     case 'bottom':
       return `translate3d(${child.x +
