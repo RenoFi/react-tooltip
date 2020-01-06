@@ -63,7 +63,7 @@ class Content extends React.Component<ContentProps, {}> {
             transform,
             willChange: 'transform',
           }
-        : {}),
+        : {position: 'relative'}),
       opacity: visible ? 1 : 0,
     };
     return (

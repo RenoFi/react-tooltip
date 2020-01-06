@@ -6,26 +6,28 @@ export default {
   title: 'Hover',
 };
 
+const content = 'Hello, World!';
+
 export const Bottom = () => (
-  <Tooltip bottom trigger="hover" content="Tooltip!">
+  <Tooltip bottom trigger="hover" content={content}>
     <span>hover me</span>
   </Tooltip>
 );
 
 export const Left = () => (
-  <Tooltip left trigger="hover" content="Tooltip!">
+  <Tooltip left trigger="hover" content={content}>
     <span>hover me</span>
   </Tooltip>
 );
 
 export const Right = () => (
-  <Tooltip right trigger="hover" content="Tooltip!">
+  <Tooltip right trigger="hover" content={content}>
     <span>hover me</span>
   </Tooltip>
 );
 
 export const Top = () => (
-  <Tooltip top trigger="hover" content="Tooltip!">
+  <Tooltip top trigger="hover" content={content}>
     <span>hover me</span>
   </Tooltip>
 );
