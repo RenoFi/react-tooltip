@@ -9,17 +9,17 @@ export default {
 const content = 'Hello, World!';
 
 export const Bottom = () => (
-  <Tooltip bottom visible content={content} />
+  <Tooltip bottom content={content} />
 );
 
 export const Left = () => (
-  <Tooltip left visible content={content} />
+  <Tooltip left content={content} />
 );
 
 export const Right = () => (
-  <Tooltip right visible content={content} />
+  <Tooltip right content={content} />
 );
 
 export const Top = () => (
-  <Tooltip top visible content={content} />
+  <Tooltip top content={content} />
 );

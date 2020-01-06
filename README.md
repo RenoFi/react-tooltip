@@ -66,11 +66,11 @@ import 'rc-simple-tooltip/dist/styles.css';
 With yarn:
 
 ```
-yarn storybook
+yarn start
 ```
 
 With npm:
 
 ```
-npm run storybook
+npm start
 ```

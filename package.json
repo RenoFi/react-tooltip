@@ -37,8 +37,8 @@
     "test": "yarn lint && yarn jest",
     "jest": "jest",
     "coverage": "jest --coverage",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "start": "start-storybook -p 6006",
+    "storybook": "build-storybook"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
