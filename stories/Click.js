@@ -6,26 +6,28 @@ export default {
   title: 'Click',
 };
 
+const content = 'Hello, World!';
+
 export const Bottom = () => (
-  <Tooltip bottom trigger="click" content="Tooltip!">
+  <Tooltip bottom trigger="click" content={content}>
     <button>click me</button>
   </Tooltip>
 );
 
 export const Left = () => (
-  <Tooltip left trigger="click" content="Tooltip!">
+  <Tooltip left trigger="click" content={content}>
     <button>click me</button>
   </Tooltip>
 );
 
 export const Right = () => (
-  <Tooltip right trigger="click" content="Tooltip!">
+  <Tooltip right trigger="click" content={content}>
     <button>click me</button>
   </Tooltip>
 );
 
 export const Top = () => (
-  <Tooltip top trigger="click" content="Tooltip!">
+  <Tooltip top trigger="click" content={content}>
     <button>click me</button>
   </Tooltip>
 );

@@ -38,9 +38,10 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   trigger,
   ...props
 }) => {
+  const sticky = Boolean(children);
   const childRef = createRef<HTMLElement>();
   const parentRef = createRef<HTMLElement>();
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(!sticky);
   const [childBox, setChildBox] = useState(empty);
   const [parentBox, setParentBox] = useState(empty);
   useEffect(() => {
@@ -57,8 +58,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
       }
     }
   }, [content, visible]);
-  const sticky = Boolean(children);
-  const childrenProps = (children as any).props;
+  const childrenProps = sticky ? (children as any).props : null;
   const childProps =
     children && active
       ? {
