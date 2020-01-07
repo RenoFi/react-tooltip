@@ -57,7 +57,7 @@
     "rollup": "^1.28.0",
     "rollup-plugin-copy": "^3.1.0",
     "rollup-plugin-typescript2": "^0.25.3",
-    "ts-jest": "^24.2.0",
+    "ts-jest": "^24.3.0",
     "tslint": "^5.20.1",
     "tslint-jest": "^1.0.5",
     "typescript": "^3.7.4"
