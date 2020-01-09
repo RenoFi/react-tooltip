@@ -1,4 +1,4 @@
-Simple react tooltip componen
+Simple react tooltip component
 ========================================
 
 [![License](https://img.shields.io/github/license/renofi/react-tooltip)](https://github.com/RenoFi/react-tooltip/blob/master/LICENSE)
@@ -42,6 +42,23 @@ Wrap your component with `Tooltip`:
 </Tooltip>
 ```
 
+Tooltip works with any component that supports refs. For custom functional components you need to forward ref:
+
+```js
+const Button = React.forwardRef(({children, ...props}, ref) =>
+  <button {...props} ref={ref}>{children}</button>
+);
+<Tooltip trigger="hover" content="Tooltip content">
+  <Button>Complete action</Button>
+</Tooltip>
+```
+
+Tooltip can be used without any children:
+
+```js
+<Tooltip top content="Tooltip content" />
+```
+
 Additionally import `styles.css` to apply default styling:
 
 ```js
@@ -53,12 +70,12 @@ import 'rc-simple-tooltip/dist/styles.css';
 
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
-|**`active`**|`{Boolean}`|`null`|Show tooltip|
-|**`content`**|`{Node}`|`null`|Tooltip content|
-|**`position`**|`{'left'\|'right'\|'top'\|'bottom'}`|`null`|Tooltip position|
-|**`trigger`**|`{'click'\|'focus'\|'hover'}`|`null`|Tooltip activation trigger|
-|**`className`**|`{String}`|`null`|className value|
-|**`styles`**|`{Object}`|`null`|styles value|
+|**`active`**|`Boolean`|`true`|Show tooltip|
+|**`content`**|`Node`|`null`|Tooltip content|
+|**`position`**|`'left'\|'right'\|'top'\|'bottom'`|`null`|Tooltip position|
+|**`trigger`**|`'click'\|'focus'\|'hover'`|`null`|Tooltip activation trigger|
+|**`className`**|`String`|`null`|className value|
+|**`styles`**|`Object`|`null`|styles value|
 
 
 ## Running locally
