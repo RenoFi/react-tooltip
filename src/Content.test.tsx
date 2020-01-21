@@ -8,8 +8,8 @@ describe('Content', () => {
   const childBox = {width: 50, height: 20, ...position, x: 100, y: 100};
   const parentBox = {width: 50, height: 20, ...position};
 
-  it('should display a blank login form, with remember me checked by default', () => {
-    const { container, getByText } = render(
+  it('should display a tooltip', () => {
+    const {container, getByText} = render(
       <Content
         active
         sticky
@@ -21,7 +21,6 @@ describe('Content', () => {
         Hello, world!
       </Content>,
     );
-    expect(getByText('Hello, world!')).toBeInTheDocument();
     expect(container.firstChild).toMatchInlineSnapshot(`
       <span
         class="awesome-react-tooltip awesome-react-tooltip-left "
