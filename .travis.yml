@@ -9,4 +9,4 @@ node_js:
 script:
   - yarn test
 install:
-  - if [ "$TRAVIS_NODE_VERSION" == "9" ]; then yarn --ignore-engines; else yarn; fi
+  - yarn --ignore-engines
