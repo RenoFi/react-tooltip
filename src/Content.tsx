@@ -6,7 +6,9 @@ import {getScrollTop} from './utils/dom';
 import omit from './utils/omit';
 import pick from './utils/pick';
 
-const positionKeys: Array<keyof PosProps> = ['left', 'right', 'top', 'bottom'];
+type PosKeys = keyof PosProps;
+
+const positionKeys: PosKeys[] = ['left', 'right', 'top', 'bottom'];
 
 interface ContentProps extends PosProps {
   children: React.ReactNode;
