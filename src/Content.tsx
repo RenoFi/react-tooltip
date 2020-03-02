@@ -12,11 +12,13 @@ const positionKeys: PosKeys[] = ['left', 'right', 'top', 'bottom'];
 
 interface ContentProps extends PosProps {
   children: React.ReactNode;
+  label?: string;
   className?: string;
   style?: React.CSSProperties;
   active: boolean;
   sticky: boolean;
   visible: boolean;
+  scrollTop?: number;
   position: Position;
   childBox: Rect;
   parentBox: Rect;
@@ -35,6 +37,7 @@ class Content extends React.Component<ContentProps, {}> {
   }
   public render() {
     const {
+      label,
       active,
       children,
       childBox,
@@ -45,13 +48,14 @@ class Content extends React.Component<ContentProps, {}> {
       visible,
       className,
       extRef,
+      scrollTop,
       onClickOutside,
       ...props
     } = this.props;
     const finalPosition = getPosition(position, pick(props, ...positionKeys));
     const transform =
       active && sticky
-        ? calculateTransform(childBox, parentBox, finalPosition, getScrollTop())
+        ? calculateTransform(childBox, parentBox, finalPosition, scrollTop || getScrollTop())
         : undefined;
     const customStyle: React.CSSProperties = {
       display: 'inline-block',

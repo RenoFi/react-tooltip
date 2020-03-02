@@ -24,24 +24,32 @@ const empty: Rect = {
 
 interface TooltipProps extends PosProps {
   active: boolean;
+  local: boolean;
+  target: HTMLElement;
   content: ReactNode;
   position: Position;
   trigger: Trigger;
+  label?: string;
   className: string;
+  scrollTop: number;
   style: CSSProperties;
 }
 
 const Tooltip: FunctionComponent<TooltipProps> = ({
   active = true,
+  local = false,
+  label,
+  target,
   content,
   children,
   trigger,
+  scrollTop,
   ...props
 }) => {
-  const sticky = Boolean(children);
+  const sticky = Boolean(children) && !local;
   const childRef = createRef<HTMLElement>();
   const parentRef = createRef<HTMLElement>();
-  const [visible, setVisible] = useState(!sticky);
+  const [visible, setVisible] = useState(!sticky || trigger === 'static');
   const [childBox, setChildBox] = useState(empty);
   const [parentBox, setParentBox] = useState(empty);
   useEffect(() => {
@@ -113,9 +121,11 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
         ref={parentRef}
         childBox={childBox}
         parentBox={parentBox}
+        label={label}
         active={active}
         sticky={sticky}
         visible={visible}
+        scrollTop={scrollTop}
         onClickOutside={() => {
           if (trigger === 'click' && active) {
             setVisible(false);
@@ -129,10 +139,10 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
     <>
       {sticky
         ? active
-          ? createPortal(tooltip, document.body)
+          ? createPortal(tooltip, target || document.body)
           : null
-        : tooltip}
-      {sticky && cloneElement(children as any, {ref: childRef, ...childProps})}
+        : active && tooltip}
+      {Boolean(children) && cloneElement(children as any, {ref: childRef, ...childProps})}
     </>
   );
 };

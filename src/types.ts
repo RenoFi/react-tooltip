@@ -1,5 +1,5 @@
 export type Position = 'bottom' | 'left' | 'right' | 'top';
-export type Trigger = 'click' | 'focus' | 'hover';
+export type Trigger = 'click' | 'focus' | 'hover' | 'static';
 export interface PosProps {
   left?: boolean;
   right?: boolean;
