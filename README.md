@@ -9,6 +9,7 @@ Simple react tooltip component
 ## Demo
 
 ![Demo](./media/demo.png?raw=true)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRenoFi%2Freact-tooltip.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FRenoFi%2Freact-tooltip?ref=badge_shield)
 
 
 ## Installation
@@ -91,3 +92,7 @@ With npm:
 ```
 npm start
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FRenoFi%2Freact-tooltip.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FRenoFi%2Freact-tooltip?ref=badge_large)
