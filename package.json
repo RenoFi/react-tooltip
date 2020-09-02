@@ -45,7 +45,7 @@
     "@babel/core": "^7.11.1",
     "@storybook/addon-storysource": "^5.3.18",
     "@storybook/addons": "^6.0.21",
-    "@storybook/react": "^5.3.19",
+    "@storybook/react": "^6.0.21",
     "@testing-library/jest-dom": "^5.11.3",
     "@testing-library/react": "^10.4.8",
     "@types/jest": "^26.0.10",
