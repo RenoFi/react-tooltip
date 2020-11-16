@@ -1,22 +1,27 @@
-import { Rect } from "./types";
+import {Rect} from './types';
 
-export default (child: Rect, parent: Rect, position: string, scrollTop = 0) => {
+export default (
+  child: Rect,
+  parent: Rect,
+  position: string,
+  scrollTop = 0,
+): string => {
   switch (position) {
-    case "bottom":
+    case 'bottom':
       return `translate3d(${Math.round(
-        child.x + child.width / 2 - parent.width / 2
+        child.x + child.width / 2 - parent.width / 2,
       )}px, ${Math.round(child.y + child.height + 4 + scrollTop)}px, 0px)`;
-    case "left":
+    case 'left':
       return `translate3d(${Math.round(
-        child.x - parent.width - 4
+        child.x - parent.width - 4,
       )}px, ${Math.round(child.y + child.height / 2 - 17 + scrollTop)}px, 0px)`;
-    case "right":
+    case 'right':
       return `translate3d(${Math.round(
-        child.x + child.width + 4
+        child.x + child.width + 4,
       )}px, ${Math.round(child.y + child.height / 2 - 17 + scrollTop)}px, 0px)`;
-    case "top":
+    case 'top':
       return `translate3d(${Math.round(
-        child.x + child.width / 2 - parent.width / 2
+        child.x + child.width / 2 - parent.width / 2,
       )}px, ${Math.round(child.y - parent.height - 4 + scrollTop)}px, 0px)`;
     default:
       return undefined;

@@ -8,18 +8,10 @@ export default {
 
 const content = 'Hello, World!';
 
-export const Bottom = () => (
-  <Tooltip bottom content={content} />
-);
+export const Bottom = () => <Tooltip bottom content={content} />;
 
-export const Left = () => (
-  <Tooltip left content={content} />
-);
+export const Left = () => <Tooltip left content={content} />;
 
-export const Right = () => (
-  <Tooltip right content={content} />
-);
+export const Right = () => <Tooltip right content={content} />;
 
-export const Top = () => (
-  <Tooltip top content={content} />
-);
+export const Top = () => <Tooltip top content={content} />;

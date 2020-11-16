@@ -6,6 +6,6 @@ export default function omit<T, K extends keyof T>(
     if (keys.includes(key as K)) {
       return result;
     }
-    return { ...result, [key]: value };
+    return {...result, [key]: value};
   }, {}) as Omit<T, K>;
 }

@@ -1,4 +1,4 @@
-export function getScrollTop() {
+export function getScrollTop(): number {
   if (window && window.pageYOffset) {
     return window.pageYOffset;
   }
