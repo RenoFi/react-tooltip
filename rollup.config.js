@@ -1,6 +1,6 @@
-import typescript from 'rollup-plugin-typescript2'
-import copy from 'rollup-plugin-copy'
-import pkg from './package.json'
+import typescript from 'rollup-plugin-typescript2';
+import copy from 'rollup-plugin-copy';
+import pkg from './package.json';
 
 export default {
   input: 'src/index.ts',
@@ -8,6 +8,7 @@ export default {
     {
       file: pkg.main,
       format: 'cjs',
+      exports: 'default',
     },
     {
       file: pkg.module,
@@ -16,17 +17,16 @@ export default {
   ],
   plugins: [
     copy({
-      targets: [
-        { src: 'src/styles.css', dest: 'dist' },
-      ]
-    })
+      targets: [{src: 'src/styles.css', dest: 'dist'}],
+    }),
   ],
   external: [
     ...Object.keys(pkg.dependencies || {}),
     ...Object.keys(pkg.peerDependencies || {}),
-  ],plugins: [
+  ],
+  plugins: [
     typescript({
       typescript: require('typescript'),
     }),
-  ]
-}
+  ],
+};
