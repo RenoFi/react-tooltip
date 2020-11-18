@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import calculateTransform from './calculateTransform';
 import getPosition from './getPosition';
 import {Position, PosProps, Rect} from './types';
@@ -28,10 +28,10 @@ export type Ref = HTMLElement;
 
 class Content extends React.Component<ContentProps, {}> {
   public componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside, false);
+    document.addEventListener('mousedown', this.handleClickOutside, true);
   }
   public componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside, false);
+    document.removeEventListener('mousedown', this.handleClickOutside, true);
   }
   public render() {
     const {
@@ -90,9 +90,11 @@ class Content extends React.Component<ContentProps, {}> {
     ) {
       this.props.onClickOutside();
     }
-  }
+  };
 }
 
 export default React.forwardRef(
-  (props: Omit<ContentProps, 'extRef'>, ref: React.RefObject<HTMLElement>) =>
-    <Content extRef={ref} {...props} />);
+  (props: Omit<ContentProps, 'extRef'>, ref: React.RefObject<HTMLElement>) => (
+    <Content extRef={ref} {...props} />
+  ),
+);

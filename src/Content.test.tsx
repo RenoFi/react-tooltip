@@ -1,4 +1,3 @@
-/* tslint:disable: no-empty */
 import {render} from '@testing-library/react';
 import React from 'react';
 import Content from './Content';
@@ -9,7 +8,7 @@ describe('Content', () => {
   const parentBox = {width: 50, height: 20, ...position};
 
   it('should display a tooltip', () => {
-    const {container, getByText} = render(
+    const {container} = render(
       <Content
         active
         sticky

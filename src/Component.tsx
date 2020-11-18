@@ -1,7 +1,6 @@
 import React, {
   cloneElement,
   createRef,
-  CSSProperties,
   FunctionComponent,
   ReactNode,
   useEffect,
@@ -23,12 +22,11 @@ const empty: Rect = {
 };
 
 interface TooltipProps extends PosProps {
-  active: boolean;
+  active?: boolean;
+  children?: ReactNode;
   content: ReactNode;
   position: Position;
   trigger: Trigger;
-  className: string;
-  style: CSSProperties;
 }
 
 const Tooltip: FunctionComponent<TooltipProps> = ({
@@ -37,7 +35,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   children,
   trigger,
   ...props
-}) => {
+}: TooltipProps) => {
   const sticky = Boolean(children);
   const childRef = createRef<HTMLElement>();
   const parentRef = createRef<HTMLElement>();
