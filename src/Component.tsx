@@ -1,9 +1,9 @@
 import React, {
   cloneElement,
-  createRef,
   FunctionComponent,
   ReactNode,
   useEffect,
+  useRef,
   useState,
 } from 'react';
 import {createPortal} from 'react-dom';
@@ -37,8 +37,8 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   ...props
 }: TooltipProps) => {
   const sticky = Boolean(children);
-  const childRef = createRef<HTMLElement>();
-  const parentRef = createRef<HTMLElement>();
+  const childRef = useRef<HTMLElement>(null);
+  const parentRef: React.RefObject<HTMLElement> = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(!sticky);
   const [childBox, setChildBox] = useState(empty);
   const [parentBox, setParentBox] = useState(empty);

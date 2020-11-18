@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {forwardRef, ForwardRefExoticComponent} from 'react';
 import calculateTransform from './calculateTransform';
 import getPosition from './getPosition';
 import {Position, PosProps, Rect} from './types';
@@ -20,21 +20,14 @@ interface ContentProps extends PosProps {
   position: Position;
   childBox: Rect;
   parentBox: Rect;
-  extRef: React.RefObject<HTMLElement>;
   onClickOutside: () => void;
 }
 
 export type Ref = HTMLElement;
 
-class Content extends React.Component<ContentProps, {}> {
-  public componentDidMount() {
-    document.addEventListener('mousedown', this.handleClickOutside, true);
-  }
-  public componentWillUnmount() {
-    document.removeEventListener('mousedown', this.handleClickOutside, true);
-  }
-  public render() {
-    const {
+const Content: ForwardRefExoticComponent<ContentProps> = forwardRef(
+  (
+    {
       active,
       children,
       childBox,
@@ -44,10 +37,11 @@ class Content extends React.Component<ContentProps, {}> {
       style,
       visible,
       className,
-      extRef,
       onClickOutside,
       ...props
-    } = this.props;
+    }: ContentProps,
+    ref: React.RefObject<HTMLElement>,
+  ) => {
     const finalPosition = getPosition(position, pick(props, ...positionKeys));
     const transform =
       active && sticky
@@ -70,7 +64,7 @@ class Content extends React.Component<ContentProps, {}> {
     };
     return (
       <span
-        ref={extRef}
+        ref={ref}
         style={{...customStyle, ...style}}
         className={[
           'awesome-react-tooltip',
@@ -81,20 +75,9 @@ class Content extends React.Component<ContentProps, {}> {
         {children}
       </span>
     );
-  }
-  private handleClickOutside = (event: Event) => {
-    if (
-      this.props.extRef &&
-      this.props.extRef.current &&
-      !this.props.extRef.current.contains(event.target as any)
-    ) {
-      this.props.onClickOutside();
-    }
-  };
-}
-
-export default React.forwardRef(
-  (props: Omit<ContentProps, 'extRef'>, ref: React.RefObject<HTMLElement>) => (
-    <Content extRef={ref} {...props} />
-  ),
+  },
 );
+
+Content.displayName = 'Content';
+
+export default Content;
