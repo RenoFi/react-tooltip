@@ -1,5 +1,6 @@
-import React, {forwardRef, ForwardRefExoticComponent} from 'react';
+import React, {forwardRef} from 'react';
 import calculateTransform from './calculateTransform';
+import useClickOutside from './useClickOutside';
 import getPosition from './getPosition';
 import {Position, PosProps, Rect} from './types';
 import {getScrollTop} from './utils/dom';
@@ -25,7 +26,7 @@ interface ContentProps extends PosProps {
 
 export type Ref = HTMLElement;
 
-const Content: ForwardRefExoticComponent<ContentProps> = forwardRef(
+const Content = forwardRef<HTMLElement, ContentProps>(
   (
     {
       active,
@@ -40,8 +41,9 @@ const Content: ForwardRefExoticComponent<ContentProps> = forwardRef(
       onClickOutside,
       ...props
     }: ContentProps,
-    ref: React.RefObject<HTMLElement>,
+    extRef: React.RefObject<HTMLElement>,
   ) => {
+    const [ref] = useClickOutside(onClickOutside, extRef);
     const finalPosition = getPosition(position, pick(props, ...positionKeys));
     const transform =
       active && sticky

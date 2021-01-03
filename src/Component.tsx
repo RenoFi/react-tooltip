@@ -1,7 +1,6 @@
 import React, {
   cloneElement,
   FunctionComponent,
-  ReactNode,
   useEffect,
   useRef,
   useState,
@@ -23,8 +22,8 @@ const empty: Rect = {
 
 interface TooltipProps extends PosProps {
   active?: boolean;
-  children?: ReactNode;
-  content: ReactNode;
+  children?: React.ReactNode;
+  content: React.ReactNode;
   position: Position;
   trigger: Trigger;
 }
