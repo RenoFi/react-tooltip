@@ -38,6 +38,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   const sticky = Boolean(children);
   const childRef = useRef<HTMLElement>(null);
   const parentRef: React.RefObject<HTMLElement> = useRef<HTMLElement>(null);
+  const [timer, setTimer] = useState(null);
   const [visible, setVisible] = useState(!sticky);
   const [childBox, setChildBox] = useState(empty);
   const [parentBox, setParentBox] = useState(empty);
@@ -73,13 +74,20 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
           ...(trigger === 'hover'
             ? {
                 onMouseEnter: (event: Event) => {
+                  if (timer) {
+                    clearTimeout(timer);
+                    setTimer(null);
+                  }
                   setVisible(true);
                   if (childrenProps.onMouseEnter) {
                     childrenProps.onMouseEnter(event);
                   }
                 },
                 onMouseLeave: (event: Event) => {
-                  setVisible(false);
+                  const timeout = setTimeout(() => {
+                    setVisible(false);
+                  }, 500);
+                  setTimer(timeout);
                   if (childrenProps.onMouseLeave) {
                     childrenProps.onMouseLeave(event);
                   }
