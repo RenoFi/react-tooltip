@@ -26,6 +26,7 @@ interface TooltipProps extends PosProps {
   content: React.ReactNode;
   position: Position;
   trigger: Trigger;
+  timeout: number;
 }
 
 const Tooltip: FunctionComponent<TooltipProps> = ({
@@ -33,6 +34,7 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
   content,
   children,
   trigger,
+  timeout = 0,
   ...props
 }: TooltipProps) => {
   const sticky = Boolean(children);
@@ -84,10 +86,10 @@ const Tooltip: FunctionComponent<TooltipProps> = ({
                   }
                 },
                 onMouseLeave: (event: Event) => {
-                  const timeout = setTimeout(() => {
+                  const timeoutRef = setTimeout(() => {
                     setVisible(false);
-                  }, 500);
-                  setTimer(timeout);
+                  }, timeout);
+                  setTimer(timeoutRef);
                   if (childrenProps.onMouseLeave) {
                     childrenProps.onMouseLeave(event);
                   }

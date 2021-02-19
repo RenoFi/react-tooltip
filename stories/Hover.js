@@ -10,24 +10,24 @@ const content = 'Hello, World!';
 
 export const Bottom = () => (
   <Tooltip bottom trigger="hover" content={content}>
-    <span>hover me</span>
+    <button>hover me</button>
   </Tooltip>
 );
 
 export const Left = () => (
   <Tooltip left trigger="hover" content={content}>
-    <span>hover me</span>
+    <button>hover me</button>
   </Tooltip>
 );
 
 export const Right = () => (
   <Tooltip right trigger="hover" content={content}>
-    <span>hover me</span>
+    <button>hover me</button>
   </Tooltip>
 );
 
 export const Top = () => (
   <Tooltip top trigger="hover" content={content}>
-    <span>hover me</span>
+    <button>hover me</button>
   </Tooltip>
 );
