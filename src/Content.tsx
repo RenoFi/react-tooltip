@@ -44,7 +44,7 @@ const Content = forwardRef<HTMLElement, ContentProps>(
     extRef: React.RefObject<HTMLElement>,
   ) => {
     const [ref] = useClickOutside(onClickOutside, extRef);
-    const finalPosition = getPosition(position, pick(props, ...positionKeys));
+    const finalPosition = getPosition(position, pick(props, positionKeys));
     const transform =
       active && sticky
         ? calculateTransform(childBox, parentBox, finalPosition, getScrollTop())
@@ -73,7 +73,7 @@ const Content = forwardRef<HTMLElement, ContentProps>(
           `awesome-react-tooltip-${finalPosition}`,
           className,
         ].join(' ')}
-        {...omit(props, ...positionKeys)}>
+        {...omit(props, positionKeys)}>
         {children}
       </span>
     );
