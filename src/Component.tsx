@@ -26,7 +26,7 @@ interface TooltipProps extends PosProps {
   content: React.ReactNode;
   position: Position;
   trigger: Trigger;
-  timeout: number;
+  timeout?: number;
 }
 
 const Tooltip: FunctionComponent<TooltipProps> = ({
