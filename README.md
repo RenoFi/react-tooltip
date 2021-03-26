@@ -71,6 +71,7 @@ import 'rc-simple-tooltip/dist/styles.css';
 |Name|Type|Default|Description|
 |:--:|:--:|:-----:|:----------|
 |**`active`**|`Boolean`|`true`|Show tooltip|
+|**`timeout`**|`Int`|`0`|Time delay before hiding tooltip in `hover` mode|
 |**`content`**|`Node`|`null`|Tooltip content|
 |**`position`**|`'left'\|'right'\|'top'\|'bottom'`|`null`|Tooltip position|
 |**`trigger`**|`'click'\|'focus'\|'hover'`|`null`|Tooltip activation trigger|
