@@ -3,8 +3,6 @@ Simple react tooltip component
 
 [![License](https://img.shields.io/github/license/renofi/react-tooltip)](https://github.com/RenoFi/react-tooltip/blob/master/LICENSE)
 [![npm](https://img.shields.io/npm/v/rc-simple-tooltip)](https://www.npmjs.com/package/rc-simple-tooltip)
-[![Build Status](https://travis-ci.org/RenoFi/react-tooltip.svg?branch=master)](https://travis-ci.org/RenoFi/react-tooltip)
-
 
 ## Demo
 
