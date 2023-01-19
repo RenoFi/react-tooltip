@@ -1,4 +1,4 @@
-name: automerge
+name: automerge-dependencies
 on:
   pull_request_review:
     types:
