@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  "ci/node/test":
     runs-on: ubuntu-latest
     strategy:
       matrix:
