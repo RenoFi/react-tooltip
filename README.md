@@ -1,3 +1,6 @@
+**IMPORTANT !!! react-tooltip is discontinued and is not maintained anymore**
+========================================
+
 Simple react tooltip component
 ========================================
 
